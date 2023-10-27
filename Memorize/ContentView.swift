@@ -19,15 +19,19 @@ struct ContentView: View {
                 }
             }
             .foregroundColor(.orange)
-            .padding()
             
-            Button("Remove Card") {
-                cardCount -= 1
+            HStack {
+                Button {
+                    cardCount -= 1
+                } label: {
+                    Label("Remove Card", systemImage: "globe")
+                }
+                Spacer()
+                Button("Add Card") {
+                    cardCount += 1
+                }
             }
-            Button("Add Card") {
-                cardCount += 1
-            }
-        }
+        }.padding()
     }
 }
 
