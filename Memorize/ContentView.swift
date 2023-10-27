@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis = ["🌻", "🌹", "🧽", "🐌", "🌻", "🌹", "🧽", "🐌"]
+    let emojis = ["🌻", "🐛", "🧽", "🐌", "🌻", "👽", "🧽", "🐌"]
     @State var cardCount = 4
     
     var body: some View {
@@ -24,13 +24,17 @@ struct ContentView: View {
                 Button {
                     cardCount -= 1
                 } label: {
-                    Label("Remove Card", systemImage: "globe")
+                    Image(systemName: "rectangle.stack.badge.minus.fill")
                 }
                 Spacer()
-                Button("Add Card") {
+                Button {
                     cardCount += 1
+                } label: {
+                    Image(systemName: "rectangle.stack.badge.plus.fill")
                 }
             }
+            .imageScale(.large)
+            .font(.largeTitle)
         }.padding()
     }
 }
